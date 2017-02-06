@@ -1,2 +1,10 @@
 # apple-basket-redux
-apple-basket-redux
+
+
+## 项目说明
+- 本项目来自文章[《实例讲解基于 React+Redux 的前端开发流程》](https://segmentfault.com/a/1190000005356568)
+- 原文章没有提供完整的实现代码，本项目是原文章的完整实现
+
+## 版本更新
+- **[v1.0]**: 基本同文章提供的代码一致
+
