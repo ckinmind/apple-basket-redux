@@ -2,11 +2,21 @@
 
 const initialState = {
     isPicking: false,
-    newAppleId: 1,
+    newAppleId: 3,
     apples: [
         {
             id: 0,
+            weight: 233,
+            isEaten: false
+        },
+        {
+            id: 1,
             weight: 235,
+            isEaten: true
+        },
+        {
+            id: 2,
+            weight: 256,
             isEaten: false
         }
     ]
@@ -36,7 +46,7 @@ export default (state = initialState, action) => {
                 ],
                 newAppleId: state.newAppleId + 1,
                 isPicking: false
-            })
+            });
             return newState;
 
         case 'apple/FAIL_PICK_APPLE':
@@ -47,13 +57,21 @@ export default (state = initialState, action) => {
             return newState;
 
         case 'apple/EAT_APPLE':
-            newState = Object.assign({}, state, {
-                apples: [
-                    ...state.apples.slice(0, action.payload),
-                    Object.assign({}, state.apples[action.payload], { isEaten: true }),
-                    ...state.apples.slice(action.payload + 1)
-                ]
+
+            console.log(state);
+            let newApples = state.apples.map(apple => {
+                if (apple.id == action.payload) {
+                    apple.isEaten = true;
+                    console.log('fdfdfdf');
+                }
+                return apple;
             });
+            console.log(newApples);
+
+            newState = {
+                ...state,
+                apples: newApples
+            };
             return newState;
 
         default:

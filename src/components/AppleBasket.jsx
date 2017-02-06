@@ -7,8 +7,15 @@ import { bindActionCreators } from 'redux';
 
 class AppleBusket extends React.Component {
 
-    getAppleItem(){
-        //return sa
+    getAppleItem(apples){
+        return apples.map(apple => {
+            if(!apple.isEaten){
+                return  <AppleItem state={apple}
+                                   actions={{eatApple: actions.eatApple}}
+                                   key={apple.id}
+                        />
+            }
+        });
     }
 
     /** 这是mocks数据，正式环境需要删除这个方法和下面的赋值部分*/
@@ -36,13 +43,11 @@ class AppleBusket extends React.Component {
     render(){
 
         let { state, actions  } = this.props;
+        //state = this.getMockState(); // todo: 是否开启模拟数据的开关，注释这行代码关闭模拟数据
+        let { apples } = state;
 
-        //是否开启模拟数据的开关，注释这行代码关闭模拟数据
-        state = this.getMockState();
-        
-
-        //对 state 做显示级别的转化
-        let stats = {
+        // status存储的是当前没吃和已吃苹果的数目和重量
+        let status = {
             appleNow: {
                 quantity: 0,
                 weight: 0
@@ -53,10 +58,10 @@ class AppleBusket extends React.Component {
             }
         };
 
-        state.apples.forEach(apple => {
+        apples.forEach(apple => {
             let selector = apple.isEaten ? 'appleEaten':'appleNow';
-            stats[selector].quantity ++;
-            stats[selector].weight += apple.weight;
+            status[selector].quantity ++;
+            status[selector].weight += apple.weight;
         });
 
         return (
@@ -67,27 +72,28 @@ class AppleBusket extends React.Component {
                     <div className="section">
                         <div className="head">当前</div>
                         <div className="content">
-                            {stats.appleNow.quantity}个苹果，
-                            {stats.appleNow.weight}克
+                            {status.appleNow.quantity}个苹果，
+                            {status.appleNow.weight}克
                         </div>
                     </div>
                     <div className="section">
                         <div className="head">已吃掉</div>
                         <div className="content">
-                            {stats.appleEaten.quantity}个苹果，
-                            {stats.appleEaten.weight}克
+                            {status.appleEaten.quantity}个苹果，
+                            {status.appleEaten.weight}克
                         </div>
                     </div>
                 </div>
 
                 <div className="appleList">
-                    {/*<div className="empty-tip">苹果篮子空空如也</div>*/}
-                    { state.apples.map(apple =>
-                        <AppleItem state={apple}
-                                   actions={{eatApple: actions.eatApple}}
-                                   key={apple.id}
-                        />
-                    )}
+                    { apples.map(apple => {
+                            if(!apple.isEaten)
+                                return <AppleItem state={apple}
+                                                  actions={{eatApple: actions.eatApple}}
+                                                  key={apple.id}
+                                        />
+                        })
+                    }
                 </div>
 
                 <div className="btn-div">
