@@ -1,13 +1,15 @@
 import React from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import '../styles/appleBasket.scss';
 import AppleItem from './AppleItem';
+import actions from '../actions/appleAction';
+import { bindActionCreators } from 'redux';
 
 class AppleBusket extends React.Component {
 
     render(){
-
-        let { state } = this.props;
+        //console.log(this.props);
+        let { state, actions  } = this.props;
 
         //这部分从对应的 appleBasketReducer.js 中拷贝
         let mockState = {
@@ -71,11 +73,16 @@ class AppleBusket extends React.Component {
 
                 <div className="appleList">
                     {/*<div className="empty-tip">苹果篮子空空如也</div>*/}
-                    { state.apples.map(apple => <AppleItem state ={apple} />) }
+                    { state.apples.map(apple =>
+                        <AppleItem state={apple}
+                                   actions={{eatApple: actions.eatApple}}
+                                   key={apple.id}
+                        />
+                    )}
                 </div>
 
                 <div className="btn-div">
-                    <button>摘苹果</button>
+                    <button onClick={actions.pickApple} >摘苹果</button>
                 </div>
 
             </div>
@@ -84,11 +91,18 @@ class AppleBusket extends React.Component {
 
 }
 
-function select(state) {
+function selectState(state) {
     return {
         state: state.appleBusket
     }
 }
 
-// export default connect()(AppleBusket);
-export default AppleBusket;
+
+function buildActionDispatcher(dispatch) {
+    return {
+        actions: bindActionCreators(actions, dispatch)
+    }
+}
+
+
+export default connect(selectState, buildActionDispatcher)(AppleBusket);
