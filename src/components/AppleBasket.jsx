@@ -7,12 +7,14 @@ import { bindActionCreators } from 'redux';
 
 class AppleBusket extends React.Component {
 
-    render(){
-        //console.log(this.props);
-        let { state, actions  } = this.props;
+    getAppleItem(){
+        //return sa
+    }
 
+    /** 这是mocks数据，正式环境需要删除这个方法和下面的赋值部分*/
+    getMockState(){
         //这部分从对应的 appleBasketReducer.js 中拷贝
-        let mockState = {
+        return {
             isPicking : false,
             newAppleId: 3,
             apples: [
@@ -28,9 +30,16 @@ class AppleBusket extends React.Component {
                 }
             ]
         };
+    }
+
+
+    render(){
+
+        let { state, actions  } = this.props;
 
         //是否开启模拟数据的开关，注释这行代码关闭模拟数据
-        state = mockState;
+        state = this.getMockState();
+        
 
         //对 state 做显示级别的转化
         let stats = {
@@ -44,7 +53,7 @@ class AppleBusket extends React.Component {
             }
         };
 
-        state.apples.map(apple => {
+        state.apples.forEach(apple => {
             let selector = apple.isEaten ? 'appleEaten':'appleNow';
             stats[selector].quantity ++;
             stats[selector].weight += apple.weight;
@@ -91,18 +100,22 @@ class AppleBusket extends React.Component {
 
 }
 
-function selectState(state) {
-    return {
-        state: state.appleBusket
-    }
-}
 
 
-function buildActionDispatcher(dispatch) {
-    return {
-        actions: bindActionCreators(actions, dispatch)
-    }
-}
+/**
+ * 原来写法中写的是：state: state.appleBasket
+ * 应该是因为文章中提到的例子是整个项目的一部分，原项目store中的state中应该是多个reducer合并的数据
+ * 所以原来的写法要写state.appleBasket，而在本项目中只有一个reducer,所以这里改为state:state
+ *
+ * 为以后容纳更多reducer的写法是在reducers文件夹中再定义一个index.js，在里面combineReducers，即使只有一个
+ * 这样就可以写成state.appleBasket，且有了扩展性，写法参照many-react-demo中的todo4
+ */
+const mapStateToProps = state => ({
+    state: state.appleBasket
+});
 
+const mapDispatchToProps = dispatch => ({
+    actions: bindActionCreators(actions, dispatch)
+});
 
-export default connect(selectState, buildActionDispatcher)(AppleBusket);
+ export default connect(mapStateToProps, mapDispatchToProps)(AppleBusket);
