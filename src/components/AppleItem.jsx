@@ -32,9 +32,3 @@ AppleItem.propTypes = {
 
 
 export default AppleItem;
-
-/**
- *          <button onClick={eatApple.bind(this, state.id)}> 吃掉 </button>
- *          <button onClick={()=> eatApple.bind(state.id)}> 吃掉 </button>
- *
- * **/
