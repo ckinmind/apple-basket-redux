@@ -64,10 +64,12 @@
   },
   "dependencies": {
     "core-js": "^2.0.0",
+    "jquery": "^3.1.1",
     "normalize.css": "^4.0.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
     "react-redux": "^5.0.2",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   }
 }

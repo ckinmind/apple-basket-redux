@@ -1,17 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import '../styles/appleBasket.scss';
-import AppleItem from './AppleItem';
-import actions from '../actions/appleAction';
 import { bindActionCreators } from 'redux';
 
+import actions from '../actions/appleAction';
+import AppleItem from './AppleItem';
+import '../styles/appleBasket.scss';
+
 class AppleBusket extends React.Component {
-
-    constructor(props){
-        super(props);
-
-
-    }
 
     /**  计算当前已吃和未吃苹果的状态*/
     calculateStatus(){
@@ -33,20 +28,19 @@ class AppleBusket extends React.Component {
         return status;
     }
 
-    getAppleItem(){
-        return this.props.apples.map(apple => {
+    /** 获取未吃苹果的组件数组*/
+    getAppleItem(apples){
+        return apples.map(apple => {
             if(!apple.isEaten){
-                return  <AppleItem apple={apple}  eatApple={actions.eatApple}  key={apple.id} />
+                return  <AppleItem apple={apple}  eatApple={this.props.actions.eatApple}  key={apple.id} />
             }
         });
     }
-
 
     render(){
 
         let { apples, actions  } = this.props;
         let status = this.calculateStatus();
-
         let {
             appleNow: {quantity:notEatenQuantity,weight:notEatenWeight},
             appleEaten: {quantity:EatenQuantity,weight:EatenWeight}
@@ -70,13 +64,7 @@ class AppleBusket extends React.Component {
                 </div>
 
                 <div className="appleList">
-                    {
-                        apples.map(apple => {
-                            if(!apple.isEaten){
-                                return  <AppleItem apple={apple}  eatApple={actions.eatApple}  key={apple.id} />
-                            }
-                         })
-                    }
+                    { this.getAppleItem(apples) }
                 </div>
 
                 <div className="btn-div">
@@ -85,7 +73,6 @@ class AppleBusket extends React.Component {
             </div>
         );
     }
-
 }
 
 
