@@ -8,22 +8,33 @@ class AppleItem extends React.Component {
     }
 
     render() {
-        let { state, actions } = this.props;
+        let { apple, eatApple } = this.props;
 
         return (
             <div className="appleItem">
                 <div className="apple"><img src="../images/apple.png" alt=""/></div>
                 <div className="info">
-                    <div className="name">红苹果 - {state.id}号</div>
-                    <div className="weight">{state.weight}克</div>
+                    <div className="name">红苹果 - { apple.id }号</div>
+                    <div className="weight">{ apple.weight }克</div>
                 </div>
                 <div className="btn-div">
-                    <button onClick={() => actions.eatApple(state.id)}> 吃掉 </button>
+                    <button onClick={eatApple.bind(this, apple.id)}> 吃掉 </button>
                 </div>
             </div>
         );
-
     }
 }
 
+AppleItem.propTypes = {
+    eatApple: React.PropTypes.func.isRequired,   // 吃苹果的回调，已通过bindActionCreators包装成dispatch(action)
+    apple: React.PropTypes.object.isRequired     // 单个苹果的数据
+};
+
+
 export default AppleItem;
+
+/**
+ *          <button onClick={eatApple.bind(this, state.id)}> 吃掉 </button>
+ *          <button onClick={()=> eatApple.bind(state.id)}> 吃掉 </button>
+ *
+ * **/

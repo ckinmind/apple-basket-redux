@@ -3,12 +3,12 @@
 }
 .appleBusket {
     width: 400px;
-    margin: 20px;
+    margin: 20px auto;
     border-radius: 4px;
     border: 1px solid #ddd;
 
     > .title {
-        padding: 6px 0px;
+        padding: 6px 0;
         text-align: center;
         color: #069;
         font-size: 20px;
@@ -41,12 +41,12 @@
     }
 
     > .appleList {
-        padding: 10px 0px;
+        padding: 10px 0;
         .empty-tip {
             text-align: center;
             font-size: 16px;
             color: #ccc;
-            padding: 20px 0px;
+            padding: 20px 0;
         }
     }
 
@@ -60,6 +60,7 @@
             padding: 6px 40px;
             border-radius: 6px;
             margin: 20px auto;
+            outline: none;
         }
     }
 }

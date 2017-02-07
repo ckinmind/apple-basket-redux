@@ -88,10 +88,7 @@ class AppleBusket extends React.Component {
                 <div className="appleList">
                     { apples.map(apple => {
                             if(!apple.isEaten)
-                                return <AppleItem state={apple}
-                                                  actions={{eatApple: actions.eatApple}}
-                                                  key={apple.id}
-                                        />
+                                return <AppleItem apple={apple} eatApple={actions.eatApple} key={apple.id} />
                         })
                     }
                 </div>
