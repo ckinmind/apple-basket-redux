@@ -1,4 +1,5 @@
 # apple-basket-redux
+![](https://raw.githubusercontent.com/ckinmind/apple-basket-redux/master/src/images/appleBasket.gif)
 一个微型的在react中应用redux的demo演示
 
 
