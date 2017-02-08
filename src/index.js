@@ -9,9 +9,6 @@ import thunk from 'redux-thunk';
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
-//console.log(store.getState());
-// 打印出reducers中的initialState
-
 ReactDOM.render(
     <Provider store={store}>
         <AppleBasket />
