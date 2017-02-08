@@ -29,12 +29,17 @@ class AppleBusket extends React.Component {
     }
 
     /** 获取未吃苹果的组件数组*/
-    getAppleItem(apples){
-        return apples.map(apple => {
-            if(!apple.isEaten){
-                return  <AppleItem apple={apple}  eatApple={this.props.actions.eatApple}  key={apple.id} />
+    getAppleItem(apples) {
+        let data = [];
+        apples.forEach(apple => {
+            if (!apple.isEaten) {
+                data.push( <AppleItem apple={apple} eatApple={this.props.actions.eatApple} key={apple.id}/> )
             }
         });
+
+        if(!data.length) data.push(<div className="empty-tip" key="empty">苹果篮子空空如也</div>);
+
+        return data;
     }
 
     render(){
