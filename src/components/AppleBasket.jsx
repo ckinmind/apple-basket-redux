@@ -20,7 +20,7 @@ class AppleBusket extends React.Component {
                 weight: 0
             }
         };
-        this.props.apples.forEach(apple => {
+        this.props.appleBasket.apples.forEach(apple => {
             let selector = apple.isEaten ? 'appleEaten':'appleNow';
                 status[selector].quantity ++;
                 status[selector].weight += apple.weight;
@@ -39,7 +39,8 @@ class AppleBusket extends React.Component {
 
     render(){
 
-        let { apples, actions  } = this.props;
+        let { appleBasket, actions  } = this.props;
+        let { apples, isPicking} = appleBasket;
         let status = this.calculateStatus();
         let {
             appleNow: {quantity:notEatenQuantity,weight:notEatenWeight},
@@ -68,7 +69,7 @@ class AppleBusket extends React.Component {
                 </div>
 
                 <div className="btn-div">
-                    <button onClick={actions.pickApple} >摘苹果</button>
+                    <button  className={isPicking ? 'disabled' : ''}  onClick={actions.pickApple} >摘苹果</button>
                 </div>
             </div>
         );
@@ -86,7 +87,7 @@ class AppleBusket extends React.Component {
  * 这样就可以写成state.appleBasket，且有了扩展性，写法参照many-react-demo中的todo4
  */
 const mapStateToProps = state => ({
-    apples: state.appleBasket.apples
+    appleBasket: state.appleBasket
 });
 
 const mapDispatchToProps = dispatch => ({

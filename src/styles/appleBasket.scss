@@ -1,30 +1,41 @@
 * {
     box-sizing: border-box;
 }
+
+.app {
+    width: 500px;
+    border: 1px solid #ddd;
+    margin: 50px auto;
+}
+
+
 .appleBusket {
-    width: 400px;
+    width: 470px;
     margin: 20px auto;
     border-radius: 4px;
     border: 1px solid #ddd;
+    position: relative;
+
 
     > .title {
-        padding: 6px 0;
+        padding: 15px 0;
         text-align: center;
         color: #069;
-        font-size: 20px;
-        //font-weight: 600;
+        font-size: 22px;
+        font-weight: bold;
     }
 
     > .stats {
         width: 100%;
-        $border: 1px dashed #ddd;
-        border-top: $border;
-        border-bottom: $border;
+        border-top: 1px dashed #ddd;
+        border-bottom: 1px dashed #ddd;
         padding: 10px 0;
+
         .section {
             display: inline-block;
             width: 50%;
             padding-left: 8px;
+
             .head {
                 padding: 6px 0px;
                 font-size: 16px;
@@ -53,14 +64,24 @@
     > .btn-div {
         text-align: center;
         button {
-            color: #fff;
-            background-color: #096;
             border: none;
+            background-color: #096;
+            color: #fff;
             font-size: 14px;
-            padding: 6px 40px;
+            cursor: pointer;
+
+            padding: 13px 50px;
             border-radius: 6px;
             margin: 20px auto;
             outline: none;
+        }
+        button:hover {
+            background-color: #55d98d
+        }
+        button.disabled {
+            background-color: #95a5a6;
+            cursor: default;
+            opacity: 0.65;
         }
     }
 }
