@@ -27,19 +27,32 @@ let actions = {
                 return;
             }
 
+
             /** 通知开始摘苹果 */
             dispatch(actions.beginPickApple());
 
-            $.ajax({
-                url: 'https://hacker-news.firebaseio.com/v0/jobstories.json',
-                method: 'GET'
-            }).done(data => {
-                /** 备注这里的url只是测试用的，这个是之前hackernews的api, 这里只是确保接口是通的，至于数据还是自己mock */
-                let weight = Math.floor(200 + Math.random()*50);
-                dispatch(actions.donePickApple(weight));
-            }).fail(xhr => {
-                dispatch(actions.failPickApple(xhr.responseText));
-            })
+            fetch('https://hacker-news.firebaseio.com/v0/jobstories.json')
+                .then(res => {
+                    if (res.status != 200) dispatch(actions.failPickApple(res.statusText));
+
+                    /** 备注这里的url只是测试用的，这个是之前hackernews的api, 这里只是确保接口是通的，至于数据还是自己mock */
+                    let weight = Math.floor(200 + Math.random() * 50);
+                    dispatch(actions.donePickApple(weight));
+
+                }).catch(e => {
+                dispatch(actions.failPickApple(e.statusText));
+            });
+
+            // $.ajax({
+            //     url: 'https://hacker-news.firebaseio.com/v0/jobstories.json',
+            //     method: 'GET'
+            // }).done(data => {
+            //     /** 备注这里的url只是测试用的，这个是之前hackernews的api, 这里只是确保接口是通的，至于数据还是自己mock */
+            //     let weight = Math.floor(200 + Math.random()*50);
+            //     dispatch(actions.donePickApple(weight));
+            // }).fail(xhr => {
+            //     dispatch(actions.failPickApple(xhr.responseText));
+            // })
         }
     },
 
