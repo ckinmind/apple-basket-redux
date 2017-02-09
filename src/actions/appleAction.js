@@ -1,8 +1,5 @@
-//import ajax from '../services/ajax'; //经过封装的加强型 ajax 函数
-import $ from 'jquery';
+// import $ from 'jquery';
 
-//这是名空间，对普通action做划分
-const prefix = 'apple/';
 
 let actions = {
 

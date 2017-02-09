@@ -7,7 +7,7 @@
 - React.js with ES6
 - Redux-thunk for middleware
 - immutable for persistent data
-- jQuery for ajax
+- fetch for request / jQuery for ajax
 - Webpack for building tool
 
 ## 项目说明
@@ -15,7 +15,7 @@
 - 原文章没有提供完整的实现代码，本项目是原文章的完整实现
 - 摘苹果的ajax请求地址使用的hackernews的api,只是为了让请求走通，数据还是自己mock
 
-## 版本更新(查看分支中的tags)
+## 版本更新(查看Branch / Tags)
 - **[v1.4]**: 使用fetch替换jQuery的ajax, 详细更新说明 [issue 11](https://github.com/ckinmind/apple-basket-redux/issues/11)
 - **[v1.3]**: 增加immutable.js, 改变对象拷贝的方式, 详细更新说明 [issue 8](https://github.com/ckinmind/apple-basket-redux/issues/8)
 - **[v1.2]**: 增加异步action的完整实现(使用react-thunk),  详细更新说明 [issue 5](https://github.com/ckinmind/apple-basket-redux/issues/5)
