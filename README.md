@@ -5,6 +5,7 @@
 
 ## 技术栈
 - React.js with ES6
+- Redux for predictable state
 - Redux-thunk for middleware
 - immutable for persistent data
 - fetch for request / jQuery for ajax
@@ -18,7 +19,7 @@
 ## 版本更新(查看Branch / Tags)
 - **[v1.4]**: 使用fetch替换jQuery的ajax, 详细更新说明 [issue 11](https://github.com/ckinmind/apple-basket-redux/issues/11)
 - **[v1.3]**: 增加immutable.js, 改变对象拷贝的方式, 详细更新说明 [issue 8](https://github.com/ckinmind/apple-basket-redux/issues/8)
-- **[v1.2]**: 增加异步action的完整实现(使用react-thunk),  详细更新说明 [issue 5](https://github.com/ckinmind/apple-basket-redux/issues/5)
+- **[v1.2]**: 增加异步action的完整实现(使用redux-thunk),  详细更新说明 [issue 5](https://github.com/ckinmind/apple-basket-redux/issues/5)
 - **[v1.1]**: 变成只有两个动作，且去除异步请求部分的演示版本, 详细更新说明 [issue 2](https://github.com/ckinmind/apple-basket-redux/issues/2)
 - **[v1.0]**: 基本同文章提供的代码一致, 详细更新说明 [issue 1](https://github.com/ckinmind/apple-basket-redux/issues/1)
 
