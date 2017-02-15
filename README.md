@@ -15,6 +15,8 @@
 - 本项目来自文章[《实例讲解基于 React+Redux 的前端开发流程》](https://segmentfault.com/a/1190000005356568)
 - 原文章没有提供完整的实现代码，本项目是原文章的完整实现
 - 摘苹果的ajax请求地址使用的hackernews的api,只是为了让请求走通，数据还是自己mock
+- npm安装依赖过程可能会遇到的问题以及不靠谱解决方案, 查看[issue 12](https://github.com/ckinmind/apple-basket-redux/issues/12)
+- npm安装依赖过程可能会遇到的问题以及不靠谱解决方案, 查看[issue 12](https://github.com/ckinmind/apple-basket-redux/issues/12)
 
 ## 版本更新(查看Branch / Tags)
 - **[v1.4]**: 使用fetch替换jQuery的ajax, 详细更新说明 [issue 11](https://github.com/ckinmind/apple-basket-redux/issues/11)
