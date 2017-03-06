@@ -1,3 +1,6 @@
+/* redux 实现 */
+
+
 import 'core-js/fn/object/assign';
 import React from 'react';
 import ReactDOM from 'react-dom';
