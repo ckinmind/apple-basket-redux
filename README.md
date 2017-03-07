@@ -1,11 +1,11 @@
 # apple-basket-redux
 ![](https://raw.githubusercontent.com/ckinmind/apple-basket-redux/master/src/images/appleBasket.gif)
 
-一个微型的在react中应用redux的demo演示, 在线访问[https://ckinmind.github.io/apple-basket-redux/](https://ckinmind.github.io/apple-basket-redux/),
+一个微型的在react中应用redux/mobx的demo演示, 在线访问[https://ckinmind.github.io/apple-basket-redux/](https://ckinmind.github.io/apple-basket-redux/),
 
 ## 技术栈
 - React.js with ES6
-- Redux for predictable state
+- Redux/Mobx for predictable state
 - Redux-thunk for middleware
 - immutable for persistent data
 - fetch for request / jQuery for ajax
@@ -19,7 +19,7 @@
 - 最新版本增加了mobx的实现方案，通过调整src/index.js的注释来切换两种方式
 
 ## 版本更新(查看Branch / Tags)
-- **[v1.5]**: 增加mobx的实现方式，可以对比redux方案和mobx方案实现的优缺
+- **[v1.5]**: 增加mobx的实现方式，可以对比redux方案和mobx方案实现的优缺, 详细更新说明 [issue 13](https://github.com/ckinmind/apple-basket-redux/issues/13)
 - **[v1.4]**: 使用fetch替换jQuery的ajax, 详细更新说明 [issue 11](https://github.com/ckinmind/apple-basket-redux/issues/11)
 - **[v1.3]**: 增加immutable.js, 改变对象拷贝的方式, 详细更新说明 [issue 8](https://github.com/ckinmind/apple-basket-redux/issues/8)
 - **[v1.2]**: 增加异步action的完整实现(使用redux-thunk),  详细更新说明 [issue 5](https://github.com/ckinmind/apple-basket-redux/issues/5)
