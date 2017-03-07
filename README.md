@@ -16,8 +16,10 @@
 - 原文章没有提供完整的实现代码，本项目是原文章的完整实现
 - 摘苹果的ajax请求地址使用的hackernews的api,只是为了让请求走通，数据还是自己mock
 - npm安装依赖过程可能会遇到的问题以及解决方案, 查看[issue 12](https://github.com/ckinmind/apple-basket-redux/issues/12)
+- 最新版本增加了mobx的实现方案，通过调整src/index.js的注释来切换两种方式
 
 ## 版本更新(查看Branch / Tags)
+- **[v1.5]**: 增加mobx的实现方式，可以对比redux方案和mobx方案实现的优缺
 - **[v1.4]**: 使用fetch替换jQuery的ajax, 详细更新说明 [issue 11](https://github.com/ckinmind/apple-basket-redux/issues/11)
 - **[v1.3]**: 增加immutable.js, 改变对象拷贝的方式, 详细更新说明 [issue 8](https://github.com/ckinmind/apple-basket-redux/issues/8)
 - **[v1.2]**: 增加异步action的完整实现(使用redux-thunk),  详细更新说明 [issue 5](https://github.com/ckinmind/apple-basket-redux/issues/5)
