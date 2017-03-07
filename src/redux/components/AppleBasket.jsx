@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import actions from '../actions/appleAction';
 import AppleItem from './AppleItem';
-import '../styles/appleBasket.scss';
+import '../../styles/appleBasket.scss';
 
 class AppleBusket extends React.Component {
 
