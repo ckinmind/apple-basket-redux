@@ -22,6 +22,7 @@ class appleStore {
     ];
     @observable newAppleId = 3;
     @observable isPicking = false;
+    @observable buttonText = '摘苹果';
 
 
 
@@ -48,7 +49,7 @@ class appleStore {
 
 
     /*摘苹果的异步操作*/
-    @action pickApple(){
+    @action pickApple = ()=>{
 
         /** 如果正在摘苹果，则结束这个thunk, 不执行摘苹果 */
         if (this.isPicking) {
@@ -56,12 +57,13 @@ class appleStore {
         }
 
         this.isPicking = true;
-
+        this.buttonText = '正在采摘...';
         fetch('https://hacker-news.firebaseio.com/v0/jobstories.json')
             .then(res => {
                 /** 备注这里的url只是测试用的，这个是之前hackernews的api, 这里只是确保接口是通的，至于数据还是自己mock */
                 let weight = Math.floor(200 + Math.random() * 50);
                 this.isPicking = false;
+                this.buttonText = '摘苹果';
                 this.apples.push({
                     id: this.newAppleId++,
                     weight: weight,

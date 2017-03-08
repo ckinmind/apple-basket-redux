@@ -22,11 +22,11 @@ class AppleBusket extends React.Component {
     }
 
     render(){
-        let { store  } = this.props;
+        let { status, isPicking, buttonText, pickApple  } = this.props.store;
         let {
             appleNow: {quantity:notEatenQuantity,weight:notEatenWeight},
             appleEaten: {quantity:EatenQuantity,weight:EatenWeight}
-        } = store.status;
+        } = status;
 
 
         return (
@@ -50,7 +50,7 @@ class AppleBusket extends React.Component {
                 </div>
 
                 <div className="btn-div">
-                    <button  className={store.isPicking ? 'disabled' : ''}  onClick={() => store.pickApple() } >摘苹果</button>
+                    <button  className={isPicking ? 'disabled' : ''}  onClick={() => pickApple() } >{buttonText}</button>
                 </div>
             </div>
         );
