@@ -1,5 +1,5 @@
 # apple-basket-redux
-![](https://raw.githubusercontent.com/ckinmind/apple-basket-redux/master/src/images/appleBasket.gif)
+![](https://raw.githubusercontent.com/ckinmind/apple-basket-redux/master/src/images/demo.gif)
 
 一个微型的在react中应用redux/mobx的demo演示, 在线访问[https://ckinmind.github.io/apple-basket-redux/](https://ckinmind.github.io/apple-basket-redux/),
 
@@ -35,6 +35,7 @@
 ```
 
 ## 问题收录
+- 关于mobx的使用问题, 查看 [issue 14](https://github.com/ckinmind/apple-basket-redux/issues/14)
 - 异步action的问题(引入redux-thunk), 查看 [issue 6](https://github.com/ckinmind/apple-basket-redux/issues/6)
 - webpack打包html中图片的问题,  查看 [issue 7](https://github.com/ckinmind/apple-basket-redux/issues/7)
 - 关于immutable.js的使用,  查看 [issue 9](https://github.com/ckinmind/apple-basket-redux/issues/9)
