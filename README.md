@@ -40,3 +40,8 @@
 - webpack打包html中图片的问题,  查看 [issue 7](https://github.com/ckinmind/apple-basket-redux/issues/7)
 - 关于immutable.js的使用,  查看 [issue 9](https://github.com/ckinmind/apple-basket-redux/issues/9)
 - 关于fetch的使用, 查看 [issue 10](https://github.com/ckinmind/apple-basket-redux/issues/10)
+
+## 其他应用
+- [gallery-by-react](https://github.com/ckinmind/gallery-by-react): 一个React实现的图片画廊
+- [hackernews-react](https://github.com/ckinmind/hackernews-react): 一个React实现的HackerNews
+- [react-cnode](https://github.com/ckinmind/react-cnode): 一个React构建的cnode社区
