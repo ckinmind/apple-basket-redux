@@ -15,8 +15,8 @@
 - 本项目来自文章[《实例讲解基于 React+Redux 的前端开发流程》](https://segmentfault.com/a/1190000005356568)
 - 原文章没有提供完整的实现代码，本项目是原文章的完整实现
 - 摘苹果的ajax请求地址使用的hackernews的api,只是为了让请求走通，数据还是自己mock
-- npm安装依赖过程可能会遇到的问题以及解决方案, 查看[issue 12](https://github.com/ckinmind/apple-basket-redux/issues/12)
 - 最新版本增加了mobx的实现方案，通过调整src/index.js的注释来切换两种方式
+- 关于`npm start`运行不成功的可能解决方案, 查看[issue 15](https://github.com/ckinmind/apple-basket-redux/issues/15)
 
 ## 版本更新(查看Branch / Tags)
 - **[v1.5]**: 增加mobx的实现方式，可以对比redux方案和mobx方案实现的优缺, 详细更新说明 [issue 13](https://github.com/ckinmind/apple-basket-redux/issues/13)
