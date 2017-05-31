@@ -17,6 +17,7 @@
 - 摘苹果的ajax请求地址使用的hackernews的api,只是为了让请求走通，数据还是自己mock
 - 最新版本增加了mobx的实现方案，通过调整src/index.js的注释来切换两种方式
 - 关于`npm start`运行不成功的可能解决方案, 查看[issue 15](https://github.com/ckinmind/apple-basket-redux/issues/15)
+- 关于`npm install`中遇到问题，`phantomjs-prebuilt`这个包下载失败，请使用`cnpm install`使用淘宝源
 
 ## 版本更新(查看Branch / Tags)
 - **[v1.5]**: 增加mobx的实现方式，可以对比redux方案和mobx方案实现的优缺, 详细更新说明 [issue 13](https://github.com/ckinmind/apple-basket-redux/issues/13)
